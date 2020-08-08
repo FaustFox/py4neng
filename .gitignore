@@ -30,3 +30,7 @@ Thumbs.db
 *.un~
 *.pyc
 *.swp
+
+# Dockerfile env
+# #######################
+Dockerfile
