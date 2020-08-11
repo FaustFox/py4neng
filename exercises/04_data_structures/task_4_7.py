@@ -10,3 +10,4 @@
 """
 
 mac = "AAAA:BBBB:CCCC"
+print(bin(int(mac.replace(':', ''), 16))[2:])
