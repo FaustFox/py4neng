@@ -19,3 +19,16 @@ Mask:
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+ip, mask = input("Enter network (IP/mask): ").split('/')
+ip = ip.split('.')
+mask =f"{('1' * int(mask)):<032}"
+
+print("Network:")
+print(f"{int(ip[0]):<8} {int(ip[1]):<8} {int(ip[2]):<8} {int(ip[3]):<8}")
+print(f"{int(ip[0]):>08b} {int(ip[1]):>08b} {int(ip[2]):>08b} {int(ip[3]):>08b}")
+print()
+print("Mask:")
+print('/' + str(mask.count('1')))
+print(f"{int(mask[:8], 2):<8} {int(mask[8:16], 2):<8} {int(mask[16:24], 2):<8} \
+{int(mask[24:], 2):<8}")
+print(mask[:8], mask[8:16], mask[16:24], mask[24:])
