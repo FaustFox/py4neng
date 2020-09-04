@@ -14,3 +14,17 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+ip_addr = input('Enter ip address: ')
+oct1, oct2, oct3, oct4 = ip_addr.split('.')
+
+if 1 <= int(oct1) <= 223:
+    print('unicast')
+elif 224 <= int(oct1) <= 239:
+    print('multicast')
+elif ip_addr == '255.255.255.255':
+    print('local broadcast')
+elif ip_addr == '0.0.0.0':
+    print('unassigned')
+else:
+    print('unused')
+
