@@ -23,3 +23,15 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+with open('CAM_table.txt') as f_src:
+    result = list()
+    for line in f_src:
+        line = line.split()
+        if line and line[0].isdigit():
+            result.append([int(line[0])] + line[1:])
+    result.sort()
+
+for i in result:
+    i.remove('DYNAMIC')
+    print(*i, sep='\t')
+

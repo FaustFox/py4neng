@@ -17,3 +17,7 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+with open('CAM_table.txt') as f_src:
+    for line in f_src:
+        if line.count('.') == 2:
+            print(line.replace('    DYNAMIC ', '').rstrip())
