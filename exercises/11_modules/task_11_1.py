@@ -40,6 +40,20 @@ def parse_cdp_neighbors(command_output):
     работать и с файлами и с выводом с оборудования.
     Плюс учимся работать с таким выводом.
     """
+    out_as_dict = dict()
+
+    command = command_output.split('\n\n')
+    local_device_name = command[0].lstrip().split('>')[0]
+    local_device_summary = command[-1].rstrip().split('\n')[1:]
+
+    for line in local_device_summary:
+        draft = line.split()
+        device_id = draft[0]
+        device_port = draft[-2]+draft[-1]
+        local_intf = draft[1]+draft[2]
+        out_as_dict[local_device_name, local_intf] = device_id, device_port
+
+    return out_as_dict
 
 
 if __name__ == "__main__":
